@@ -1,0 +1,173 @@
+; *************************************************************
+; *** Puertos de entrada
+protocolo_port	equ 0x00
+	activar_bit	equ 0x01
+clave_port	equ 0x01
+mem_port	equ 0x02
+; *** Puertos de salida
+;protocolo_port	equ 0x00
+	libre_bit	equ 0x01
+	ok_bit		equ 0x02
+	nok_bit		equ 0x04
+	ack_bit		equ 0x08
+mem_dir0_port	equ 0x01
+mem_dir1_port	equ 0x02
+; *** Registros
+cont1		equ sF
+cont0		equ sE
+dir		equ sD
+clave_in1	equ sC
+clave_in0	equ sB
+clave_cmp	equ sA
+mem_cmp		equ s9
+; **************************************************************
+e0:
+	load	clave_in0, 0x00
+	load	clave_in1, 0x00
+	load 	cont1, 0x00
+	load 	cont0, 0x00
+	load 	s0, 0x01
+	out	s0, protocolo_port
+e0in:
+	in	s0, protocolo_port
+	and	s0, activar_bit
+	jump	Z, e0in
+e1:
+	in	s1, clave_port
+	add	cont0, 0x01
+	addc	cont1, 0x00
+	load	s0, ack_bit
+	out	s0, protocolo_port
+e1ack:
+	in	s0, protocolo_port
+	and	s0, activar_bit
+	jump	NZ, e1ack
+	comp	cont0, 0x01
+	jump	NZ, alm1
+	load	clave_in0, s1
+	jump	fin_alm
+alm1:
+	comp	cont0, 0x02
+	jump	NZ, alm2
+	sl0	s1
+	sl0	s1
+	sl0	s1
+	sl0	s1
+	and	s1, 0xF0
+	or	clave_in0, s1
+	jump	fin_alm
+alm2:	
+	comp	cont0, 0x03
+	jump	NZ, alm3
+	load	clave_in1, s1
+	jump	fin_alm
+alm3:
+	sl0	s1
+	sl0	s1
+	sl0	s1
+	sl0	s1
+	and	s1, 0xF0
+	or	clave_in1, s1
+fin_alm:
+	load	s0, 0x00
+	out	s0, protocolo_port
+	comp	cont0, 0x04
+	jump	NZ, e0in
+	
+	load	cont0, 0x00
+	out	cont0, mem_dir0_port
+	load	cont1, 0x00
+	out	cont1, mem_dir1_port
+	load 	dir, 0x00
+leer_mem:
+	load	s1, 0x00
+	in	mem_cmp, mem_port
+	and	mem_cmp, 0x0F
+	comp	dir, 0x00
+	jump	NZ, comp1
+	load	s2, clave_in0
+	and 	s2, 0x0F
+	load	clave_cmp, s2
+	comp	clave_cmp, mem_cmp
+	jump	NZ, act_clave
+	jump	act_dir
+comp1:
+	comp	dir, 0x01
+	jump	NZ, comp2
+	load	s2, clave_in0
+	and	s2, 0xF0
+	sr0	s2
+	sr0	s2
+	sr0	s2
+	sr0	s2
+	load	clave_cmp, s2
+	comp	clave_cmp, mem_cmp
+	jump	NZ, act_clave
+	jump	act_dir
+comp2:
+	comp	dir, 0x02
+	jump	NZ, comp3
+	load	s2, clave_in1
+	and 	s2, 0x0F
+	load	clave_cmp, s2
+	comp	clave_cmp, mem_cmp
+	jump	NZ, act_clave
+	jump	act_dir
+comp3:
+	load	s2, clave_in1
+	and	s2, 0xF0
+	sr0	s2
+	sr0	s2
+	sr0	s2
+	sr0	s2
+	load	clave_cmp, s2
+	comp	clave_cmp, mem_cmp
+	jump	NZ, act_clave
+	jump	mostrar_ok
+act_clave:
+	comp	cont1, 0x00
+	jump	C, act_clave_dir
+	comp	cont0, 0x28
+	jump	C, act_clave_dir
+	jump	mostrar_nok
+act_clave_dir:
+	load	s0, 0x04
+	sub	s0, dir
+	add	cont0, s0
+	addc	cont1, 0x00
+	load	dir, 0x00
+	out	cont0, mem_dir0_port
+	out	cont1, mem_dir1_port
+	jump	leer_mem
+act_dir:
+	add	dir, 0x01
+	add	cont0, 0x01
+	addc	cont1, 0x00
+	out	cont0, mem_dir0_port
+	out	cont1, mem_dir1_port
+	jump	leer_mem
+mostrar_ok:
+	load	s0, ok_bit
+	out	s0, protocolo_port
+	load	cont0, 0x00
+	load	cont1, 0x00
+mostrar_ok_retraso:
+	comp	cont0, 0x08
+	jump	Z, e0
+	add	cont0, 0x01
+	jump	mostrar_ok_retraso
+mostrar_nok:
+	load	s0, nok_bit
+	out	s0, protocolo_port
+	load	cont0, 0x00
+	load	cont1, 0x00
+mostrar_nok_retraso:
+	comp	cont0, 0x08
+	jump	Z, e0
+	add	cont0, 0x01
+	jump	mostrar_nok_retraso
+
+	
+
+	
+	
