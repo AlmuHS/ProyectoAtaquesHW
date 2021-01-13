@@ -50,7 +50,7 @@ architecture Behavioral of ing_inv_cableada is
 	signal dir	: std_logic_vector(3 downto 0);
 	signal clave	: std_logic_vector(3 downto 0);
 	type estado_asm is (E0, E1, E2, E3, E4, E4b, E5, E6,
-		E7, E7b, E8, E8b, E9, E10, E11);
+		E7, E7b, E8, E8b, E9, E10);
 	signal estado	: estado_asm;
 	type mem_array is array (integer range <>) of std_logic_vector(3 downto 0);
 	signal data_tmp	: mem_array(0 to 3);
@@ -118,8 +118,14 @@ begin
 							estado <= E10; --Avanzamos a E10 para confirmar clave correcta
 						end if;
 					else --Si no coincide, esperamos y leemos la siguiente clave
-						cont2 <= (others => '0'); --Calculamos el tiempo de espera
-						estado <= E11; --Si no coincide digito, saltamos a E11 para esperar
+						--Esperamos 3 ciclos por cada dígito que no hemos comprobado
+						if cont2 < (((4 - dir)& "00") - (4-dir)) then --Si no hemos llegado al final de la espera
+							estado <= E5; --Seguimos en el mismo estado
+							cont2 <= cont2 + 1; --Incrementamos contador
+						else
+							estado <= E6; --Si la espera ha finalizado, saltamos a E6 para comprobar siguiente clave
+							cont2 <= (others => '0');
+						end if;
 					end if;
 				when E6 => --Buscamos siguiente clave
 					dir_tmp := 4-dir; --Calculamos direccion de la siguiente clave
@@ -156,14 +162,6 @@ begin
 						estado <= E10; --Nos quedamos en el estado actual durante 8 ciclos
 					else
 						estado <= E0; --Despues de los 8 ciclos, volvemos al principio
-					end if;
-				when E11 => --Esperamos varios ciclos antes de leer la siguiente clave
-					--Esperamos 3 ciclos por cada dígito que no hemos comprobado
-					if cont2 < (((4 - dir)& "00") - (4 - dir)) then --Si no hemos llegado al final de la espera
-						estado <= E11; --Seguimos en el mismo estado
-						cont2 <= cont2 + 1; --Incrementamos contador
-					else
-						estado <= E6; --Si la espera ha finalizado, saltamos a E6 para comprobar siguiente clave
 					end if;
 				when others =>
 					estado <= E0; --En otro caso, volvemos al principio
