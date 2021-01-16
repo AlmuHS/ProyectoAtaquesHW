@@ -37,7 +37,8 @@ entity ing_inv_cableada is
            req : in  STD_LOGIC;
            data_in : in  STD_LOGIC_VECTOR (3 downto 0);
 			  mem	: in std_logic_vector(3 downto 0);
-			  cont_out	: out std_logic_vector(9 downto 0);
+			  --cont_out	: out std_logic_vector(9 downto 0);
+			  cont_out	: out std_logic_vector(11 downto 0);
            ctrl_libre : out  STD_LOGIC;
            ctrl_ok : out  STD_LOGIC;
            ctrl_nok : out  STD_LOGIC;
@@ -45,7 +46,8 @@ entity ing_inv_cableada is
 end ing_inv_cableada;
 
 architecture Behavioral of ing_inv_cableada is
-	signal cont	: std_logic_vector(9 downto 0);
+	--signal cont	: std_logic_vector(9 downto 0);
+	signal cont	: std_logic_vector(11 downto 0);
 	signal cont2 : std_logic_vector(9 downto 0);
 	signal dir	: std_logic_vector(3 downto 0);
 	signal clave	: std_logic_vector(3 downto 0);

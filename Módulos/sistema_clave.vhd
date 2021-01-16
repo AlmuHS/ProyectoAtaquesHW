@@ -19,6 +19,8 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -60,14 +62,16 @@ architecture Behavioral of sistema_clave is
            req : in  STD_LOGIC;
            data_in : in  STD_LOGIC_VECTOR (3 downto 0);
 			  mem	: in std_logic_vector(3 downto 0);
-			  cont_out	: out std_logic_vector(9 downto 0);
+			  --cont_out	: out std_logic_vector(9 downto 0);
+			  cont_out	: out std_logic_vector(11 downto 0);
            ctrl_libre : out  STD_LOGIC;
            ctrl_ok : out  STD_LOGIC;
            ctrl_nok : out  STD_LOGIC;
 			  ack	: out std_logic);
 	end component;
 	signal mem			: std_logic_vector(3 downto 0);
-	signal cont_out	: std_logic_vector(9 downto 0);
+	--signal cont_out	: std_logic_vector(9 downto 0);
+	signal cont_out	: std_logic_vector(11 downto 0);
 	signal cont_out1	: std_logic_vector(11 downto 0);
 begin
 	ctrl_hw:ing_inv_cableada port map (
@@ -95,7 +99,10 @@ begin
 --		ack => ack
 --	);
 	
-	cont_out1 <= "00" & cont_out;
+	--cont_out1 <= "00" & cont_out;
+	--cont_out1 <= cont_out + "011001000000";
+	cont_out1 <= cont_out + 1600;
+
 	mem_clave:RAMB16_S4
    generic map (
       INIT => X"0", --  Value of output RAM registers at startup
@@ -129,7 +136,7 @@ begin
       INIT_16 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_17 => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_18 => X"0000000000000000000000000000000000000000000000000000000000000000",
-      INIT_19 => X"0000000000000000000000000000000000000000000000000000000000000000",
+      INIT_19 => X"1111111111111111111111111111111111111111111111111111111111111111", --selected
       INIT_1A => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_1B => X"0000000000000000000000000000000000000000000000000000000000000000",
       INIT_1C => X"0000000000000000000000000000000000000000000000000000000000000000",
