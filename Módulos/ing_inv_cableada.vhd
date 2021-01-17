@@ -124,8 +124,8 @@ begin
 				when E4b =>
 					estado <= E5;
 				when E5 => --Leemos clave de la memoria y comparamos
-					value_tmp := data_tmp(conv_integer(dir));
-					if (decode_digit(value_tmp) = mem) then --Si coincide digito con contenido de memoria
+					value_tmp := decode_digit(mem); --Decodifica valor de la memoria
+					if (data_tmp(conv_integer(dir)) = value_tmp) then --Si coincide digito con contenido de memoria
 						if (dir < 3) then --Si quedan digitos por comprobar 
 							estado <= E8; --Avanzamos a E8 para leer siguiente digito
 						else --Si se han leido todos los digitos
