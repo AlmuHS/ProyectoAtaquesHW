@@ -37,7 +37,6 @@ entity ing_inv_cableada is
            req : in  STD_LOGIC;
            data_in : in  STD_LOGIC_VECTOR (3 downto 0);
 			  mem	: in std_logic_vector(3 downto 0);
-			  --cont_out	: out std_logic_vector(9 downto 0);
 			  cont_out	: out std_logic_vector(11 downto 0);
            ctrl_libre : out  STD_LOGIC;
            ctrl_ok : out  STD_LOGIC;
@@ -46,7 +45,6 @@ entity ing_inv_cableada is
 end ing_inv_cableada;
 
 architecture Behavioral of ing_inv_cableada is
-	--signal cont	: std_logic_vector(9 downto 0);
 	signal cont	: std_logic_vector(11 downto 0);
 	signal cont2 : std_logic_vector(9 downto 0);
 	signal dir	: std_logic_vector(3 downto 0);
@@ -56,11 +54,25 @@ architecture Behavioral of ing_inv_cableada is
 	signal estado	: estado_asm;
 	type mem_array is array (integer range <>) of std_logic_vector(3 downto 0);
 	signal data_tmp	: mem_array(0 to 3);
+	
+	function decode_digit(digit: std_logic_vector(3 downto 0)) return std_logic_vector is
+		variable decoded_digit: std_logic_vector(3 downto 0);
+	begin
+		if digit = "0000" then
+			decoded_digit := digit;			
+		else
+			decoded_digit := 16 - digit;
+		end if;
+		return std_logic_vector(decoded_digit);
+	end decode_digit;
+	
+	
 begin
 	cont_out <= cont;
 	clave <= data_tmp(conv_integer(dir));
 	P1:process (clk, reset)
 		variable dir_tmp	: std_logic_vector(3 downto 0);
+		variable value_tmp: std_logic_vector(3 downto 0);
 	begin
 		--Inicializacion
 		if (reset='1') then
@@ -112,7 +124,8 @@ begin
 				when E4b =>
 					estado <= E5;
 				when E5 => --Leemos clave de la memoria y comparamos
-					if (data_tmp(conv_integer(dir)) = mem) then --Si coincide digito con contenido de memoria
+					value_tmp := data_tmp(conv_integer(dir));
+					if (decode_digit(value_tmp) = mem) then --Si coincide digito con contenido de memoria
 						if (dir < 3) then --Si quedan digitos por comprobar 
 							estado <= E8; --Avanzamos a E8 para leer siguiente digito
 						else --Si se han leido todos los digitos

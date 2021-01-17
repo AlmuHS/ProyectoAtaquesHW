@@ -62,7 +62,6 @@ architecture Behavioral of sistema_clave is
            req : in  STD_LOGIC;
            data_in : in  STD_LOGIC_VECTOR (3 downto 0);
 			  mem	: in std_logic_vector(3 downto 0);
-			  --cont_out	: out std_logic_vector(9 downto 0);
 			  cont_out	: out std_logic_vector(11 downto 0);
            ctrl_libre : out  STD_LOGIC;
            ctrl_ok : out  STD_LOGIC;
@@ -70,7 +69,6 @@ architecture Behavioral of sistema_clave is
 			  ack	: out std_logic);
 	end component;
 	signal mem			: std_logic_vector(3 downto 0);
-	--signal cont_out	: std_logic_vector(9 downto 0);
 	signal cont_out	: std_logic_vector(11 downto 0);
 	signal cont_out1	: std_logic_vector(11 downto 0);
 begin
@@ -99,7 +97,6 @@ begin
 --		ack => ack
 --	);
 	
-	--cont_out1 <= "00" & cont_out;
 	cont_out1 <= cont_out + 1632; --Lee a partir de la posición 32 de la fila 19
 
 	mem_clave:RAMB16_S4
@@ -135,7 +132,7 @@ begin
 		INIT_16 => X"1079264603104100863681528348095525501728103348351905547151750012",
 		INIT_17 => X"5745103728577917597911692161018552719752907652607134679829486131",
 		INIT_18 => X"2697840362738724067731354819265682475743867857074363537462094136",
-		INIT_19 => X"1111111111111111111111111115321001111111111111111111111132101210", --selected
+		INIT_19 => X"1814532715136870997264786765DEF074374383461962887625257034356588", --selected
 		INIT_1A => X"8765615342470312078966446941302283053081336792268655913585264871",
 		INIT_1B => X"0281457264291110344065746479559047562424453016760596820423552455",
 		INIT_1C => X"9958260039769499020233190885973286633912740866290825986248078262",
