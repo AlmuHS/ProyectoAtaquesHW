@@ -72,6 +72,7 @@ begin
 	P1:process (clk, reset)
 		variable dir_tmp	: std_logic_vector(3 downto 0);
 		variable value_tmp: std_logic_vector(3 downto 0);
+		variable mem_non_read: std_logic_vector(5 downto 0);
 	begin
 		--Inicializacion
 		if (reset='1') then
@@ -118,6 +119,7 @@ begin
 				when E4 => --Empieza comprobación de la clave
 					ack <= '0'; --Desactivamos confirmacion
 					cont <= (others => '0'); --El contador se utiliza para indicar los digitos comprobados
+					cont2 <= (others => '0');
 					dir <= (others => '0'); --Dirección a leer
 					estado <= E4b; --E5
 				when E4b =>
@@ -128,8 +130,15 @@ begin
 						if (dir < 3) then --Si quedan digitos por comprobar 
 							estado <= E8; --Avanzamos a E8 para leer siguiente digito
 						else --Si se han leido todos los digitos
-							cont <= (others => '0'); --Reseteamos contador
-							estado <= E10; --Avanzamos a E10 para confirmar clave correcta
+							-- Esperamos 4 ciclos por cada posición de memoria sin leer
+							if cont2 < ((40 - cont)&"00") then
+								cont2 <= cont2 +1;
+								estado <= E5;
+							else
+								cont <= (others => '0'); --Reseteamos contador
+								cont2 <= (others => '0');
+								estado <= E10; --Avanzamos a E10 para confirmar clave correcta
+							end if;
 						end if;
 					else --Si no coincide, esperamos y leemos la siguiente clave
 						--Esperamos 3 ciclos por cada dígito que no hemos comprobado
@@ -152,12 +161,14 @@ begin
 					end if;
 				when E7 => --Clave no coincide, comprobamos con siguiente clave
 					cont <= cont+dir_tmp; --Incrementamos dirección de memoria
+					cont2 <= (others => '0');
 					estado <= E7b; --Esperamos un ciclo y saltamos a E5 para leer siguiente clave
 				when E7b =>
 					estado <= E5; --Esperamos un ciclo antes de saltar a E5
 				when E8 => --Leemos siguiente digito
 					dir <= dir+1; --Incrementamos direccion de memoria
 					cont <= cont+1; --Incrementamos numero de digitos leidos
+					cont2 <= (others => '0');
 					estado <= E8b; --Volvemos a E5 para comprobar clave
 				when E8b =>
 					estado <= E5;
