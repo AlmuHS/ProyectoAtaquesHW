@@ -134,7 +134,7 @@ begin
 							if cont2 < ((40 - cont)&"00") then
 								cont2 <= cont2 +1;
 								estado <= E5;
-							else
+							else --Si la espera ha finalizado
 								cont <= (others => '0'); --Reseteamos contador
 								cont2 <= (others => '0');
 								estado <= E10; --Avanzamos a E10 para confirmar clave correcta
