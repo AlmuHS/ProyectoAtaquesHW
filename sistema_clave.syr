@@ -1,0 +1,572 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.04 secs
+ 
+--> 
+Reading design: sistema_clave.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "sistema_clave.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "sistema_clave"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : sistema_clave
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/almu/Proyecto_AHW/Módulos/ing_inv_cableada.vhd" in Library work
+Entity <ing_inv_cableada> compiled.
+Entity <ing_inv_cableada> (Architecture <behavioral>) compiled.
+Compiling vhdl file "/home/almu/Proyecto_AHW/Módulos/sistema_clave.vhd" in Library work
+Entity <sistema_clave> compiled.
+Entity <sistema_clave> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <sistema_clave> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <ing_inv_cableada> in library <work> (architecture <behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <sistema_clave> in library <work> (Architecture <behavioral>).
+    Set user-defined property "INIT =  0" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_00 =  788F556292E7251710769EABF73F9AA8E64D9CA31669A533258C0417955754E2" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_01 =  4765DBF663F0D34479D83FB0D1B3D3F2587C60EE60ACCE4FCB2270FB516FC34F" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_02 =  A5BAF54B52FB8B915EE920E734A0A61ECAAC26B92258D4290BEF8530338A2EC6" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_03 =  489549145DD7ACACE06188FF4EB01DD1F1FBF2FFC9F076E8AD638C283B610662" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_04 =  C817C8A721217F3D7C5EE959C2A2D4E20F495F9240C77A71444A5C3B493264EA" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_05 =  D233572945427D34DB64F223925B2AA15B4249060942077F21724E127ABA224D" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_06 =  ACC9190331E88593A76F15AE9CB5631ABFB6EC45688604C84E7F70970E655A4F" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_07 =  7D5B40283EE60D9AFB3FB5425CC8CE50CAB5539A5E1BBE46ABF32B0465270B9A" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_08 =  91D76D2A207CE9A94E11EC35634BAAA7311F89CFE5F3F950BFDDB8C9278098D4" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_09 =  F5DD7A15ACE7CB16EFD08752862132D2C711B3B9F96B48FB605F413BC48523BE" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_0A =  284C6F5F8100B4833840589CA4FA129B31B4073BBB23DDDEF20071FEFCFA17FE" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_0B =  42BB04EA533D1256F9C768A8FC04EA580A197104955C1923B8CFE1DF1135C160" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_0C =  7029A677AC8D9CD667A0AE9EE9CE499F8987AA95B0CDCFACCB12908E75366B96" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_0D =  80E7AD8B93D383A6CB914D6EB75259C1E6BEFC2ADF9AB65E7DCDD9E1E9591C53" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_0E =  2BA07807642DD537E0F7CDD758E95AC4EA25AEB56C11560BD131E5742B52C807" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_0F =  F25DD2D1AFA06D95DF5E2774C788AF22D8DC99E985EC7C636D54F779C62C62BB" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_10 =  695BDF82F2E6A2F0F5656294443CA41D355AABA508E6BD5CC866AA2E97DF11B1" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_11 =  65D0A633ED2CAC39FE7B97C2CE63A03DF2C240A04BC9185342C950B0AAEB203D" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_12 =  3F4EEA004071BC9F30E26B49C365EE4B030A55DC1D084F0D2BDCCC4AE30BA26F" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_13 =  A2D51F4CA14AEF3E34094CB4AE2C94B8ED27D0008023BAA15FEF6FA6101237C8" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_14 =  9620BFE1DFFF7ACB4E49AB2C7F11D115878F058F90E1F35E681A867B7B673E47" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_15 =  9E2EE1EE66202BF3747C91A2FF7BC59757E956090A8E2569C21DA91031B68EC9" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_16 =  DE9D86B8C007ABF5108A206B452C23A28F8189D0E5A8CC9128689CB1A2ADE38A" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_17 =  99EFB73D32E1FF727A83E5582D68155F060FEAB967544EC0F7A680644C55C6C4" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_18 =  8ACDD73898D698B17669E06F3774D8FD5C83882338247A29C1FFC5E18F45CE36" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_19 =  BB433B955C60A1BEB52C21C309A5AF400BB86B6CC64E688E764F1B2FCBBA2AF5" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_1A =  42D285BF0616994E9243757C40E618E4F9B3947CE63FE1A01D09B399A2D1D3A2" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_1B =  D361B9E3BF97E48770F85C7F5FF6970BE467FABBC8E3652F8DEF4E4D0CDF38E9" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_1C =  CC16052DED40286F79D5D159DBDE4C7751680B6FC62C59F22DC74E0A80674D76" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_1D =  EDACC733A49A63EC8D6902BDEFEDC3BA246988A7278873646E3C74822222CFA2" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_1E =  3D3E562E88F0844180FE33CDBFC5CF3866F48B413C11B5B9B7DEC515AC29F0D2" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_1F =  40941ADB804AFE52133E7C69A0616F1D8ACB44B8DE8A1E5D00F26E32D23ED4D1" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_20 =  68DBA3CF525DBB651E3B78399E8F60B0104E6BC5A65A0BFF5541C77D8D7B4232" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_21 =  AFF35B70477A5EE64C6A7268DB39256A536080FC7B9348B494EAAF918D4D754D" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_22 =  FCCC171EFAEB4B92B0EF856A04113693D4C7AC78171E7E0CD4843796434CBB02" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_23 =  4B9713E8DC2AAE1B743068D2C378987BBA11E05CF0E3E1545C000B20BFDBB9E8" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_24 =  247C62A1730388B7D2B242CFFD3B2ABEF688AA607E156E46C056F0353CBBA888" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_25 =  84CA88957DB90D0D195A6C831A52075698AC3D7D7B1D9FA96A575AE14C94DDE4" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_26 =  898A936F53F3402B343B0E22F86054BB930F3E747E803DB8CDD24CE786406B19" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_27 =  DFDD28EB34C284BAAAAA5D3EFEDB94B7C4E8B6DAF27A41584482C721D97F08CA" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_28 =  33C7B9D4DE094F9FFF7CC446E638541270D4DE3F15464992FBCA6FD76CFD7458" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_29 =  1C56DD5DDA6760A5C50CFE274E1CEE7E8F75F2D71E6B2CC7A0D2F32185BE7CE1" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_2A =  6479159A25A103969252E1C187BE0AD0C6F6E31639231B0192855C842D1506BD" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_2B =  DC246FF9FB9BF6149D72AA888E27F917285345ECAF3728C0EEECF3998FAD1501" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_2C =  E1BB253962908F9983D0B1D6BC948045DED79230BBAA46DD0431766A044F8030" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_2D =  6F12AD27A697EDD1A245E6276D33C48A062085208A259E744BD3DCAE88971716" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_2E =  ABAE6DDBEE49CADF31AA8DA1F44FADF0A50B2F4589079A59DE308751A9EF90E3" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_2F =  4FA055747FB67AF8EF63AD13D891C593C5D573F3ADC8347DC237B406554BC7EF" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_30 =  05099C689469805D597038888E2881E696A43BA92EFA7E63302C20C3D1186379" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_31 =  3B914ABCA359C5D4ACD5AF8E8364ACDA7B1CFFA78B42D83FDA26B936DD481D76" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_32 =  572E47BE3AD8E8AF7A400B5E526C9F638488519454DCB11E3D70367AC890CC4F" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_33 =  89888DBFE96ACCD33FE701A3ACD34099C2F8974A8449BC2494043EEF9DEA60F3" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_34 =  105C1B62BB64EC6C580DBDDA9DE445F2607E474DC3E0B15BFB78E441E4B82F30" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_35 =  A80D9A1E3F978DC624D3B894FB71B8CE15989941EA897258C09F865525DCD83B" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_36 =  C9E8835E6236168D9D0A5E7010D37E5D4A6CEB7B71ACDB8024291B611361F7ED" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_37 =  6C8290902D2711B4E44F0F13E27BC790F9D2274A1025762A9A1AFDF07BED1C99" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_38 =  D76A491E2535817400A7DBC5C7E25937D7EA12B440090B2104ECE7DF5507B2D5" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_39 =  BB6CFF3526EC23E05FBDEB526B5056D8B710EBD0E3879B4B269C9DE4FB365ADD" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_3A =  9004B6AE93E5821418389A8FC8686970AE74A2875EBA9E8E9282CC20798374FD" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_3B =  5CFFD213AE82AE8C4A100C88E1084E87475CD3EA07975BF848AE774763444640" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_3C =  AE73AF98D060C966CA268FF7EC5086613FAEFF4ED3EC69AF18DF0FDEAA03079F" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_3D =  D47033E3D32834412ABC0576C2173D9ADD5CCA91D6D3B63FE17721EC6113D2D1" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_3E =  07CE601C1D1EFD28A31E7127FC92BFB4C4A962152FF63F4266192FB9E8A03C84" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "INIT_3F =  3B90728DCEB9C3089EB8611C4D1697B361AA109B24EDE81605E137E53666844C" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "SRVAL =  0" for instance <mem_clave> in unit <sistema_clave>.
+    Set user-defined property "WRITE_MODE =  WRITE_FIRST" for instance <mem_clave> in unit <sistema_clave>.
+Entity <sistema_clave> analyzed. Unit <sistema_clave> generated.
+
+Analyzing Entity <ing_inv_cableada> in library <work> (Architecture <behavioral>).
+WARNING:Xst:1610 - "/home/almu/Proyecto_AHW/Módulos/ing_inv_cableada.vhd" line 70: Width mismatch. <cont_out> has a width of 10 bits but assigned expression is 12-bit wide
+WARNING:Xst:790 - "/home/almu/Proyecto_AHW/Módulos/ing_inv_cableada.vhd" line 71: Index value(s) does not match array range, simulation mismatch
+INFO:Xst:1433 - Contents of array <data_tmp> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:790 - "/home/almu/Proyecto_AHW/Módulos/ing_inv_cableada.vhd" line 102: Index value(s) does not match array range, simulation mismatch
+INFO:Xst:1433 - Contents of array <data_tmp> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:790 - "/home/almu/Proyecto_AHW/Módulos/ing_inv_cableada.vhd" line 129: Index value(s) does not match array range, simulation mismatch
+INFO:Xst:1433 - Contents of array <data_tmp> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Entity <ing_inv_cableada> analyzed. Unit <ing_inv_cableada> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <ing_inv_cableada>.
+    Related source file is "/home/almu/Proyecto_AHW/Módulos/ing_inv_cableada.vhd"
+WARNING:Xst:646 - Signal <clave> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <estado>.
+    -----------------------------------------------------------------------
+    | States             | 14                                             |
+    | Transitions        | 25                                             |
+    | Inputs             | 8                                              |
+    | Outputs            | 11                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | e0                                             |
+    | Power Up State     | e0                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 10-bit adder for signal <cont_out>.
+    Found 1-bit register for signal <ctrl_libre>.
+    Found 1-bit register for signal <ctrl_nok>.
+    Found 1-bit register for signal <ack>.
+    Found 1-bit register for signal <ctrl_ok>.
+    Found 12-bit adder for signal <$sub0000> created at line 134.
+    Found 4-bit adder for signal <$sub0001> created at line 145.
+    Found 6-bit subtractor for signal <$sub0002> created at line 145.
+    Found 4-bit 4-to-1 multiplexer for signal <$varindex0000> created at line 129.
+    Found 12-bit register for signal <cont>.
+    Found 12-bit adder for signal <cont$addsub0000>.
+    Found 10-bit register for signal <cont2>.
+    Found 10-bit adder for signal <cont2$share0000> created at line 129.
+    Found 16-bit register for signal <data_tmp>.
+    Found 4-bit adder for signal <decoded_digit$addsub0000> created at line 63.
+    Found 4-bit register for signal <dir>.
+    Found 4-bit adder for signal <dir$addsub0000> created at line 169.
+    Found 4-bit register for signal <dir_tmp>.
+    Found 4-bit comparator equal for signal <estado$cmp_eq0000> created at line 129.
+    Found 13-bit comparator less for signal <estado$cmp_lt0000> created at line 108.
+    Found 5-bit comparator less for signal <estado$cmp_lt0001> created at line 130.
+    Found 14-bit comparator less for signal <estado$cmp_lt0002> created at line 134.
+    Found 10-bit comparator less for signal <estado$cmp_lt0003> created at line 145.
+    Found 13-bit comparator less for signal <estado$cmp_lt0004> created at line 156.
+    Found 13-bit comparator less for signal <estado$cmp_lt0005> created at line 178.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  50 D-type flip-flop(s).
+	inferred   8 Adder/Subtractor(s).
+	inferred   7 Comparator(s).
+	inferred   4 Multiplexer(s).
+Unit <ing_inv_cableada> synthesized.
+
+
+Synthesizing Unit <sistema_clave>.
+    Related source file is "/home/almu/Proyecto_AHW/Módulos/sistema_clave.vhd"
+Unit <sistema_clave> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 8
+ 10-bit adder                                          : 2
+ 12-bit adder                                          : 2
+ 4-bit adder                                           : 3
+ 6-bit subtractor                                      : 1
+# Registers                                            : 12
+ 1-bit register                                        : 4
+ 10-bit register                                       : 1
+ 12-bit register                                       : 1
+ 4-bit register                                        : 6
+# Comparators                                          : 7
+ 10-bit comparator less                                : 1
+ 13-bit comparator less                                : 3
+ 14-bit comparator less                                : 1
+ 4-bit comparator equal                                : 1
+ 5-bit comparator less                                 : 1
+# Multiplexers                                         : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <ctrl_hw/estado/FSM> on signal <estado[1:14]> with one-hot encoding.
+-------------------------
+ State | Encoding
+-------------------------
+ e0    | 00000000000001
+ e1    | 00000000000010
+ e2    | 00000000000100
+ e3    | 00000000001000
+ e4    | 00000000010000
+ e4b   | 00000000100000
+ e5    | 00000001000000
+ e6    | 00001000000000
+ e7    | 00010000000000
+ e7b   | 01000000000000
+ e8    | 00000010000000
+ e8b   | 10000000000000
+ e9    | 00100000000000
+ e10   | 00000100000000
+-------------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 8
+ 10-bit adder                                          : 2
+ 12-bit adder                                          : 2
+ 4-bit adder                                           : 3
+ 6-bit subtractor                                      : 1
+# Registers                                            : 50
+ Flip-Flops                                            : 50
+# Comparators                                          : 7
+ 10-bit comparator less                                : 1
+ 13-bit comparator less                                : 3
+ 14-bit comparator less                                : 1
+ 4-bit comparator equal                                : 1
+ 5-bit comparator less                                 : 1
+# Multiplexers                                         : 1
+ 4-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <sistema_clave> ...
+
+Optimizing unit <ing_inv_cableada> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block sistema_clave, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 64
+ Flip-Flops                                            : 64
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : sistema_clave.ngr
+Top Level Output File Name         : sistema_clave
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 11
+
+Cell Usage :
+# BELS                             : 303
+#      GND                         : 1
+#      INV                         : 11
+#      LUT1                        : 20
+#      LUT2                        : 30
+#      LUT2_D                      : 1
+#      LUT2_L                      : 1
+#      LUT3                        : 44
+#      LUT3_D                      : 1
+#      LUT4                        : 78
+#      LUT4_D                      : 6
+#      LUT4_L                      : 11
+#      MUXCY                       : 47
+#      MUXF5                       : 17
+#      VCC                         : 1
+#      XORCY                       : 34
+# FlipFlops/Latches                : 64
+#      FDC                         : 42
+#      FDCE                        : 16
+#      FDE                         : 4
+#      FDP                         : 2
+# RAMS                             : 1
+#      RAMB16_S4                   : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 10
+#      IBUF                        : 6
+#      OBUF                        : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      107  out of   4656     2%  
+ Number of Slice Flip Flops:             64  out of   9312     0%  
+ Number of 4 input LUTs:                203  out of   9312     2%  
+ Number of IOs:                          11
+ Number of bonded IOBs:                  11  out of    232     4%  
+ Number of BRAMs:                         1  out of     20     5%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 65    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | IBUF                   | 60    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 9.794ns (Maximum Frequency: 102.103MHz)
+   Minimum input arrival time before clock: 4.511ns
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 9.794ns (frequency: 102.103MHz)
+  Total number of paths / destination ports: 6949 / 78
+-------------------------------------------------------------------------
+Delay:               9.794ns (Levels of Logic = 17)
+  Source:            ctrl_hw/cont_0 (FF)
+  Destination:       ctrl_hw/cont2_9 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: ctrl_hw/cont_0 to ctrl_hw/cont2_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             10   0.591   1.057  ctrl_hw/cont_0 (ctrl_hw/cont_0)
+     LUT1:I0->O            1   0.704   0.000  ctrl_hw/Madd__sub0000_cy<0>_rt (ctrl_hw/Madd__sub0000_cy<0>_rt)
+     MUXCY:S->O            1   0.464   0.000  ctrl_hw/Madd__sub0000_cy<0> (ctrl_hw/Madd__sub0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  ctrl_hw/Madd__sub0000_cy<1> (ctrl_hw/Madd__sub0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  ctrl_hw/Madd__sub0000_cy<2> (ctrl_hw/Madd__sub0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  ctrl_hw/Madd__sub0000_cy<3> (ctrl_hw/Madd__sub0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  ctrl_hw/Madd__sub0000_cy<4> (ctrl_hw/Madd__sub0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  ctrl_hw/Madd__sub0000_cy<5> (ctrl_hw/Madd__sub0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  ctrl_hw/Madd__sub0000_cy<6> (ctrl_hw/Madd__sub0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  ctrl_hw/Madd__sub0000_cy<7> (ctrl_hw/Madd__sub0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  ctrl_hw/Madd__sub0000_cy<8> (ctrl_hw/Madd__sub0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  ctrl_hw/Madd__sub0000_cy<9> (ctrl_hw/Madd__sub0000_cy<9>)
+     MUXCY:CI->O           0   0.059   0.000  ctrl_hw/Madd__sub0000_cy<10> (ctrl_hw/Madd__sub0000_cy<10>)
+     XORCY:CI->O           1   0.804   0.424  ctrl_hw/Madd__sub0000_xor<11> (ctrl_hw/_sub0000<11>)
+     LUT4:I3->O            1   0.704   0.000  ctrl_hw/Mcompar_estado_cmp_lt0002_lut<8> (ctrl_hw/Mcompar_estado_cmp_lt0002_lut<8>)
+     MUXCY:S->O           15   0.864   1.052  ctrl_hw/Mcompar_estado_cmp_lt0002_cy<8> (ctrl_hw/Mcompar_estado_cmp_lt0002_cy<8>)
+     LUT4_D:I2->O          9   0.704   0.824  ctrl_hw/cont2_mux0002<0>3 (ctrl_hw/N16)
+     LUT4:I3->O            1   0.704   0.000  ctrl_hw/cont2_mux0002<8>1 (ctrl_hw/cont2_mux0002<8>)
+     FDC:D                     0.308          ctrl_hw/cont2_1
+    ----------------------------------------
+    Total                      9.794ns (6.437ns logic, 3.357ns route)
+                                       (65.7% logic, 34.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 26 / 26
+-------------------------------------------------------------------------
+Offset:              4.511ns (Levels of Logic = 2)
+  Source:            reset (PAD)
+  Destination:       ctrl_hw/dir_tmp_3 (FF)
+  Destination Clock: clk rising
+
+  Data Path: reset to ctrl_hw/dir_tmp_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            62   1.218   1.447  reset_IBUF (reset_IBUF)
+     LUT2:I0->O            4   0.704   0.587  ctrl_hw/dir_tmp_and00001 (ctrl_hw/dir_tmp_and0000)
+     FDE:CE                    0.555          ctrl_hw/dir_tmp_0
+    ----------------------------------------
+    Total                      4.511ns (2.477ns logic, 2.034ns route)
+                                       (54.9% logic, 45.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            ctrl_hw/ctrl_libre (FF)
+  Destination:       ctrl_libre (PAD)
+  Source Clock:      clk rising
+
+  Data Path: ctrl_hw/ctrl_libre to ctrl_libre
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              2   0.591   0.447  ctrl_hw/ctrl_libre (ctrl_hw/ctrl_libre)
+     OBUF:I->O                 3.272          ctrl_libre_OBUF (ctrl_libre)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.32 secs
+ 
+--> 
+
+
+Total memory usage is 523336 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

@@ -61,42 +61,42 @@ architecture Behavioral of sistema_clave is
            req : in  STD_LOGIC;
            data_in : in  STD_LOGIC_VECTOR (3 downto 0);
 			  mem	: in std_logic_vector(3 downto 0);
-			  cont_out	: out std_logic_vector(11 downto 0);
+			  cont_out	: out std_logic_vector(9 downto 0);
            ctrl_libre : out  STD_LOGIC;
            ctrl_ok : out  STD_LOGIC;
            ctrl_nok : out  STD_LOGIC;
 			  ack	: out std_logic);
 	end component;
 	signal mem			: std_logic_vector(3 downto 0);
-	signal cont_out	: std_logic_vector(11 downto 0);
+	signal cont_out	: std_logic_vector(9 downto 0);
 	signal cont_out1	: std_logic_vector(11 downto 0);
 begin
-	ctrl_hw:ing_inv_cableada port map (
-		clk => clk,
-		reset => reset,
-		req => req,
-		data_in => data_in,
-		mem	=> mem,
-		cont_out	=> cont_out,
-		ctrl_libre => ctrl_libre,
-		ctrl_ok => ctrl_ok,
-		ctrl_nok => ctrl_nok,
-		ack => ack
-	);
---	ctrl_sw:ing_inv_programada port map (
+--	ctrl_hw:ing_inv_cableada port map (
 --		clk => clk,
 --		reset => reset,
 --		req => req,
---		clave_in => data_in,
+--		data_in => data_in,
 --		mem	=> mem,
---		cont	=> cont_out,
+--		cont_out	=> cont_out,
 --		ctrl_libre => ctrl_libre,
 --		ctrl_ok => ctrl_ok,
 --		ctrl_nok => ctrl_nok,
 --		ack => ack
 --	);
+	ctrl_sw:ing_inv_programada port map (
+		clk => clk,
+		reset => reset,
+		req => req,
+		clave_in => data_in,
+		mem	=> mem,
+		cont	=> cont_out,
+		ctrl_libre => ctrl_libre,
+		ctrl_ok => ctrl_ok,
+		ctrl_nok => ctrl_nok,
+		ack => ack
+	);
 	
-	cont_out1 <= cont_out + 1632; --Lee a partir de la posición 32 de la fila 19
+	cont_out1 <= "00" & cont_out;
 
 	mem_clave:RAMB16_S4
    generic map (

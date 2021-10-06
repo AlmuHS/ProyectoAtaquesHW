@@ -1,0 +1,29 @@
+Command line:
+   sistema_clave_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  40921
+
+Wed Jan 27 16:29:41 2021
+
+
+ Elaboration Time: 0.04 sec
+
+ Current Memory Usage: 189.862 Meg
+
+ Total Signals          : 1753
+ Total Nets             : 1856
+ Total Signal Drivers   : 456
+ Total Blocks           : 434
+ Total Primitive Blocks : 320
+ Total Processes        : 444
+ Total Traceable Variables  : 755
+ Total Scalar Nets and Variables : 63243
+Total Line Count : 1575
+
+ Total Simulation Time: 0.4 sec
+
+ Current Memory Usage: 265.363 Meg
+
+Wed Jan 27 16:32:27 2021
+

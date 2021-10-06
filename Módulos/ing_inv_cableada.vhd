@@ -36,7 +36,7 @@ entity ing_inv_cableada is
            req : in  STD_LOGIC;
            data_in : in  STD_LOGIC_VECTOR (3 downto 0);
 			  mem	: in std_logic_vector(3 downto 0);
-			  cont_out	: out std_logic_vector(11 downto 0);
+			  cont_out	: out std_logic_vector(9 downto 0);
            ctrl_libre : out  STD_LOGIC;
            ctrl_ok : out  STD_LOGIC;
            ctrl_nok : out  STD_LOGIC;
@@ -67,7 +67,7 @@ architecture Behavioral of ing_inv_cableada is
 	
 	
 begin
-	cont_out <= cont;
+	cont_out <= cont + 640; --Lee a partir de la posición 32 de la fila 19
 	clave <= data_tmp(conv_integer(dir));
 	P1:process (clk, reset)
 		variable dir_tmp	: std_logic_vector(3 downto 0);

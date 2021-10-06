@@ -27,7 +27,6 @@
 --------------------------------------------------------------------------------
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
  
 -- Uncomment the following library declaration if using
@@ -73,11 +72,11 @@ ARCHITECTURE behavior OF sistema_clave_tb IS
 	type mem_array is array (integer range <>) of std_logic_vector(3 downto 0);
 	type array_mem is array (integer range <>) of mem_array(0 to 3);
 	constant clave_0	: array_mem(0 to 4) := (
-		(X"0", X"C", X"1", X"6"),
-		(X"B", X"6", X"7", X"0"),
-		(X"D", X"4", X"F", X"E"),
-		(X"4", X"E", X"B", X"5"),
-		(X"1", X"0", X"9", X"3")
+		(X"1", X"2", X"3", X"6"),
+		(X"4", X"7", X"8", X"2"),
+		(X"2", X"7", X"8", X"6"),
+		(X"F", X"5", X"5", X"5"),
+		(X"8", X"4", X"9", X"3")
 	);
 BEGIN
  

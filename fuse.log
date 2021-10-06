@@ -1,0 +1,70 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -o /home/almu/Proyecto_AHW/sistema_clave_tb_isim_beh.exe -prj /home/almu/Proyecto_AHW/sistema_clave_tb_beh.prj work.sistema_clave_tb 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/almu/Proyecto_AHW/Picoblaze/picoblaze_pkg.vhd" into library work
+Parsing VHDL file " " into library work
+Parsing VHDL file " " into library work
+Parsing VHDL file "/home/almu/Proyecto_AHW/Picoblaze/sim.vhd" into library work
+Parsing VHDL file "/home/almu/Proyecto_AHW/Picoblaze/puertos_out.vhd" into library work
+Parsing VHDL file "/home/almu/Proyecto_AHW/Picoblaze/puertos_in.vhd" into library work
+Parsing VHDL file "/home/almu/Proyecto_AHW/Picoblaze/prog_fin.vhd" into library work
+Parsing VHDL file "/home/almu/Proyecto_AHW/Picoblaze/kcpsm3.vhd" into library work
+Parsing VHDL file "/home/almu/Proyecto_AHW/Picoblaze/interrupcion_pblaze.vhd" into library work
+Parsing VHDL file "/home/almu/Proyecto_AHW/Picoblaze/micro_total.vhd" into library work
+Parsing VHDL file " " into library work
+Parsing VHDL file " " into library work
+Parsing VHDL file " " into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 120700 KB
+Fuse CPU Usage: 1680 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package vcomponents
+Compiling package picoblaze_pkg
+Compiling package textio
+Compiling package vital_timing
+Compiling package vital_primitives
+Compiling package vpkg
+Compiling architecture behavioral of entity interrupcion_pblaze [interrupcion_pblaze_default]
+Compiling architecture lut1_v of entity LUT1 [\LUT1("0001")(0,3)\]
+Compiling architecture fdr_v of entity FDR [\FDR('0')\]
+Compiling architecture fds_v of entity FDS [\FDS('1')\]
+Compiling architecture lut4_v of entity LUT4 [\LUT4("0000000010000000")(0,15)\]
+Compiling architecture fd_v of entity FD [\FD('0')\]
+Compiling architecture fde_v of entity FDE [\FDE('0')\]
+Compiling architecture lut3_v of entity LUT3 [\LUT3("00000100")(0,7)\]
+Compiling architecture fdre_v of entity FDRE [\FDRE('0')\]
+Compiling architecture lut2_v of entity LUT2 [\LUT2("1101")(0,3)\]
+Compiling architecture muxcy_v of entity MUXCY [muxcy_default]
+Compiling architecture xorcy_v of entity XORCY [xorcy_default]
+Compiling architecture inv_v of entity INV [inv_default]
+Compiling architecture fdrse_v of entity FDRSE [\FDRSE('0')\]
+Compiling architecture ram16x1d_v of entity RAM16X1D [\RAM16X1D("0000000000000000")\]
+Compiling architecture ram64x1s_v of entity RAM64X1S [\RAM64X1S("000000000000000000000...]
+Compiling architecture muxf5_v of entity MUXF5 [muxf5_default]
+Compiling architecture ram32x1s_v of entity RAM32X1S [\RAM32X1S("000000000000000000000...]
+Compiling architecture low_level_definition of entity kcpsm3 [kcpsm3_default]
+Compiling architecture behavioral of entity simulacion [simulacion_default]
+Compiling architecture ramb16_s18_v of entity RAMB16_S18 [\RAMB16_S18("0000000000000000000...]
+Compiling architecture low_level_definition of entity prog [prog_default]
+Compiling architecture low_level_definition of entity prog_sim [prog_sim_default]
+Compiling architecture behavioral of entity prog_fin [\prog_fin(0)\]
+Compiling architecture behavioral of entity puertos_in [puertos_in_default]
+Compiling architecture behavioral of entity puertos_out [puertos_out_default]
+Compiling architecture behavioral of entity micro_total [\micro_total(0)\]
+Compiling architecture behavioral of entity ing_inv_programada [ing_inv_programada_default]
+Compiling architecture ramb16_s4_v of entity RAMB16_S4 [\RAMB16_S4("0000","0000","WRITE_...]
+Compiling architecture behavioral of entity sistema_clave [sistema_clave_default]
+Compiling architecture behavior of entity sistema_clave_tb
+Time Resolution for simulation is 1ps.
+Waiting for 8 sub-compilation(s) to finish...
+Compiled 135 VHDL Units
+Built simulation executable /home/almu/Proyecto_AHW/sistema_clave_tb_isim_beh.exe
+Fuse Memory Usage: 1234724 KB
+Fuse CPU Usage: 2100 ms
+GCC CPU Usage: 3070 ms
