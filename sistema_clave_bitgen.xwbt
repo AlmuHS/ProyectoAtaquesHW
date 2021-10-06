@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=/home/almu/Proyecto_AHW/sistema_clave.ncd
-OUTFILE=/home/almu/Proyecto_AHW/sistema_clave.bit
-FAMILY=Spartan3E
-PART=xc3s500e-4fg320
-WORKINGDIR=/home/almu/Proyecto_AHW
-LICENSE=WebPack
-USER_INFO=210848925_0_0_016
