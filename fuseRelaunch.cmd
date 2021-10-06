@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -o "/home/almu/Proyecto_AHW/sistema_clave_tb_isim_beh.exe" -prj "/home/almu/Proyecto_AHW/sistema_clave_tb_beh.prj" "work.sistema_clave_tb" 
