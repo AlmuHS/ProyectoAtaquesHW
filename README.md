@@ -57,9 +57,9 @@ Para solucionar el problema de la lectura de las claves desde la memoria, realiz
 
 1. **Completado de la memoria con información aleatoria:** Esto complica el poder encontrar las claves mediante la búsqueda de posiciones de memoria no nulas
 
-2. **Cifrado de la memoria: ** Esto obliga a utilizar un algoritmo de decodificación para poder descifrar las claves  
+2. **Cifrado de la memoria:** Esto obliga a utilizar un algoritmo de decodificación para poder descifrar las claves  
 
-3. **Inicio de la lectura de las claves en una posición diferente al inicio de la memoria: ** Esto hará mas difícil encontrar la ubicación de las claves a descifrar
+3. **Inicio de la lectura de las claves en una posición diferente al inicio de la memoria:** Esto hará mas difícil encontrar la ubicación de las claves a descifrar
 
 #### Rellenado de la memoria con información aleatoria
 
